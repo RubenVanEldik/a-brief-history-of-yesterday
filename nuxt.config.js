@@ -1,5 +1,11 @@
 export default {
   target: 'static',
+  loading: false,
+  loadingIndicator: {
+    name: 'pulse',
+    color: '#1d4ed8',
+    background: '#f9fafb'
+  },
   head: {
     title: 'A Brief History Of Yesterday',
     link: [
@@ -17,6 +23,7 @@ export default {
     '@nuxtjs/pwa'
   ],
   build: {
+    analyze: true
   },
   generate: {
     fallback: true
@@ -24,9 +31,9 @@ export default {
   pwa: {
     meta: {
       name: 'A Brief History Of Yesterday',
-      viewport: 'width=device-width, initial-scale=1',
       theme_color: '#1d4ed8',
-      mobileAppIOS: true
+      mobileAppIOS: true,
+      appleStatusBarStyle: 'black'
     },
     manifest: {
       name: 'A Brief History Of Yesterday',
