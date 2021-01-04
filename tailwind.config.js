@@ -3,5 +3,8 @@ module.exports = {
     fontFamily: {
       sans: ['Charter', 'Garamond', 'serif']
     }
-  }
+  },
+  plugins: [
+    require('@tailwindcss/typography')
+  ]
 }
