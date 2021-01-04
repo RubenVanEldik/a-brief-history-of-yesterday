@@ -23,7 +23,6 @@ export default {
     '@nuxtjs/pwa'
   ],
   build: {
-    analyze: true
   },
   generate: {
     fallback: true
