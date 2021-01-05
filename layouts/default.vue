@@ -4,9 +4,9 @@
       <nuxt />
     </main>
     <footer class="mb-4 text-sm text-center text-gray-500 italic">
-      <nuxt-link to="/contact">
+      <a href="mailto:contact@hackerdaily.io">
         Made with ♥ in Utrecht
-      </nuxt-link>
+      </a>
     </footer>
   </div>
 </template>
