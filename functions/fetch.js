@@ -22,11 +22,12 @@ exports.handler = async ({ httpMethod, queryStringParameters }) => {
     const response = await fetch(url)
     const { query } = await response.json()
     const page = query?.pages?.[0]
-    const content = page?.revisions?.[0]?.content
 
-    return {
-      statusCode: 200,
-      body: content
+    if (!page.missing) {
+      return {
+        statusCode: 200,
+        body: page?.revisions?.[0]?.content
+      }
     }
   } catch (err) {
     console.log(err)
