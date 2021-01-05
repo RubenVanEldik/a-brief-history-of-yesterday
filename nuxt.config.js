@@ -12,6 +12,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  publicRuntimeConfig: [
+    'NETLIFY_URL'
+  ].reduce((obj, key) => ({ ...obj, [key]: process.env[key] }), {}),
   plugins: [
   ],
   components: true,

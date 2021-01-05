@@ -26,13 +26,17 @@ export default {
   },
   async mounted () {
     // Fetch the current events page from Wikipedia
-    const response = await fetch(`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=Portal%3ACurrent%20events%2F${this.yesterday.format('YYYY MMMM D')}&formatversion=latest&rvprop=content&rvparse=1`)
-    const { query } = await response.json()
-    const page = query?.pages?.[0]
-    const content = page?.revisions?.[0]?.content
-
-    // Set error to true if the page is missing
-    this.error = page.missing === true
+    let content
+    try {
+      const response = await fetch(`${this.$config.NETLIFY_URL || ''}/fetch?date=${this.yesterday.format('YYYY-MM-DD')}`)
+      if (response.status === 200) {
+        content = await response.text()
+      } else {
+        throw new Error(response.status)
+      }
+    } catch (err) {
+      this.error = true
+    }
 
     if (content) {
       // Get the needed HTML if there is any content
