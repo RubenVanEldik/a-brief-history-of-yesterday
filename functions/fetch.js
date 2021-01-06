@@ -13,7 +13,9 @@ const fetchPage = async (date, retries = 0) => {
   } catch (err) {
     console.log(err)
 
+    console.log('ERR.NAME === \'FETCHERROR\' && RETRIES < 3', err.name && retries < 3)
     if (err.name === 'FetchError' && retries < 3) {
+      console.log('CONDITION PASSED')
       return await fetchPage(date, retries + 1)
     }
   }
