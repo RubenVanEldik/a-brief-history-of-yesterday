@@ -102,6 +102,7 @@ export default {
         anchor.href = anchor.href.replace(new RegExp(`https?://${anchor.host}`), 'https://en.wikipedia.org')
       }
       anchor.setAttribute('target', '_blank')
+      anchor.setAttribute('rel', 'noreferrer')
     }
   }
 }
