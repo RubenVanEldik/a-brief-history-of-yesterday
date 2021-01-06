@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     beautifiedDate () {
-      return dayjs(this.date).format('MMMM D')
+      return dayjs(this.date).format('dddd MMMM D')
     },
     previousDate () {
       const previousDate = dayjs(this.date).subtract(1, 'day')
