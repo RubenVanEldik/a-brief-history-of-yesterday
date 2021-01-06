@@ -13,9 +13,12 @@ export default {
     ]
   },
   publicRuntimeConfig: [
+    'NODE_ENV',
+    'SIMPLE_ANALYTICS_URL',
     'NETLIFY_URL'
   ].reduce((obj, key) => ({ ...obj, [key]: process.env[key] }), {}),
   plugins: [
+    { src: '~/plugins/simpleAnalytics' }
   ],
   components: true,
   buildModules: [
