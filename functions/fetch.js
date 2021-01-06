@@ -1,6 +1,24 @@
 import fetch from 'node-fetch'
 import dayjs from 'dayjs'
 
+const fetchPage = async (date, retries = 0) => {
+  try {
+    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=Portal%3ACurrent%20events%2F${dayjs(date).format('YYYY MMMM D')}&formatversion=latest&rvprop=content&rvparse=1`
+    const response = await fetch(url)
+    const { query } = await response.json()
+    const page = query?.pages?.[0]
+    return page.missing
+      ? null
+      : page?.revisions?.[0]?.content
+  } catch (err) {
+    console.log(err)
+
+    if (err.name === 'FetchError' && retries < 3) {
+      return await fetchPage(date, retries + 1)
+    }
+  }
+}
+
 exports.handler = async ({ httpMethod, queryStringParameters }) => {
   if (httpMethod !== 'GET') {
     // Only allow GET
@@ -17,20 +35,13 @@ exports.handler = async ({ httpMethod, queryStringParameters }) => {
   }
 
   // Fetch the current events page from Wikipedia
-  try {
-    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=Portal%3ACurrent%20events%2F${dayjs(queryStringParameters.date).format('YYYY MMMM D')}&formatversion=latest&rvprop=content&rvparse=1`
-    const response = await fetch(url)
-    const { query } = await response.json()
-    const page = query?.pages?.[0]
+  const content = await fetchPage(queryStringParameters.date)
 
-    if (!page.missing) {
-      return {
-        statusCode: 200,
-        body: page?.revisions?.[0]?.content
-      }
+  if (content) {
+    return {
+      statusCode: 200,
+      body: content
     }
-  } catch (err) {
-    console.log(err)
   }
 
   return {
