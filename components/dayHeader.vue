@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-
 export default {
   props: {
     date: {
@@ -27,17 +25,17 @@ export default {
   },
   computed: {
     beautifiedDate () {
-      return dayjs(this.date).format('dddd MMMM D')
+      return this.$dayjs(this.date).format('dddd MMMM D')
     },
     previousDate () {
-      const previousDate = dayjs(this.date).subtract(1, 'day')
-      return !previousDate.isSame(dayjs().subtract(1, 'year'), 'day')
+      const previousDate = this.$dayjs(this.date).subtract(1, 'day')
+      return !previousDate.isSame(this.$dayjs().subtract(1, 'year'), 'day')
         ? previousDate.format('YYYY-MM-DD')
         : null
     },
     nextDate () {
-      const nextDate = dayjs(this.date).add(1, 'day')
-      return !nextDate.isSame(dayjs(), 'day')
+      const nextDate = this.$dayjs(this.date).add(1, 'day')
+      return !nextDate.isSame(this.$dayjs(), 'day')
         ? nextDate.format('YYYY-MM-DD')
         : null
     }

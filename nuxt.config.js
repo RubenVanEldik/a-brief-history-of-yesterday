@@ -26,7 +26,8 @@ export default {
     '@nuxtjs/tailwindcss'
   ],
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/dayjs'
   ],
   build: {
   },
