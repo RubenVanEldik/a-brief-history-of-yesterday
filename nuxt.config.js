@@ -23,7 +23,8 @@ export default {
   components: true,
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/ngrok'
   ],
   modules: [
     '@nuxtjs/pwa',
@@ -48,5 +49,10 @@ export default {
       display: 'standalone',
       theme_color: '#1d4ed8'
     }
+  },
+  ngrok: {
+    authtoken: process.env.NGROK_AUTHTOKEN,
+    auth: process.env.NGROK_AUTH,
+    region: 'eu'
   }
 }
