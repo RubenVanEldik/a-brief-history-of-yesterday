@@ -15,6 +15,7 @@
         and shared under the Creative Commons Attribution-ShareAlike License.
       </div>
     </footer>
+    <introduction-modal />
   </div>
 </template>
 
