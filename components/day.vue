@@ -7,7 +7,7 @@
       class="prose dark:prose-dark"
       v-html="html"
     />
-    <fallback
+    <day-fallback
       v-else
       :loading="!error"
       :error="error"
