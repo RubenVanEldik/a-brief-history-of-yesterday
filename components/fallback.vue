@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex justify-content mt-12">
     <div
-      class="w-full text-gray-600 text-lg text-center"
+      class="w-full text-gray-600 dark:text-gray-400 text-lg text-center"
       v-text="loading ? 'Loading...' : 'Error'"
     />
   </div>

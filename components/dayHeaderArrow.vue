@@ -6,7 +6,7 @@
   />
   <span
     v-else
-    class="text-gray-400"
+    class="text-gray-400 dark:text-gray-600"
     v-text="arrow"
   />
 </template>

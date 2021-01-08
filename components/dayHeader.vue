@@ -1,5 +1,5 @@
 <template>
-  <h2 class="flex justify-center align-middle text-2xl">
+  <h2 class="flex justify-center align-middle text-2xl text-gray-900 dark:text-gray-100">
     <day-header-arrow
       :date="previousDate"
       arrow="<"

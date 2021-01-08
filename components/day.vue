@@ -4,7 +4,7 @@
     <day-header :date="date" />
     <div
       v-if="!error && html"
-      class="prose"
+      class="prose dark:prose-dark"
       v-html="html"
     />
     <fallback
