@@ -1,14 +1,10 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <div
-    v-if="html"
+    v-if="beautifiedHtml"
     class="mb-12 prose dark:prose-dark"
-  >
-    <div v-html="beautifiedHtml" />
-    <div class="text-gray-500 text-sm">
-      Original text is written by the amazing <a :href="`https://en.wikipedia.org/w/index.php?title=Portal:Current_events/${$dayjs(date).format('YYYY_MMMM_D')}&action=history`">Wikipedia contributors</a> and shared under the Creative Commons Attribution-ShareAlike License.
-    </div>
-  </div>
+    v-html="beautifiedHtml"
+  />
 </template>
 
 <script>
