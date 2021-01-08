@@ -1,16 +1,12 @@
 <template>
-  <h2 class="flex justify-center align-middle text-2xl text-gray-900 dark:text-gray-100">
+  <h2 class="flex justify-center items-center text-2xl text-gray-900 dark:text-gray-100">
     <day-header-arrow
       :date="previousDate"
-      arrow="<"
     />
-    <div
-      class="mx-3"
-      v-text="beautifiedDate"
-    />
+    <div v-text="beautifiedDate" />
     <day-header-arrow
       :date="nextDate"
-      arrow=">"
+      rotation="180"
     />
   </h2>
 </template>
