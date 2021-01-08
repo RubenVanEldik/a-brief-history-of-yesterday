@@ -11,6 +11,14 @@ module.exports = {
         gray: colors.trueGray
       },
       typography: theme => ({
+        DEFAULT: {
+          css: {
+            ul: {
+              marginTop: '0px',
+              marginBottom: '0px'
+            }
+          }
+        },
         dark: {
           css: {
             color: theme('colors.gray.300'),
