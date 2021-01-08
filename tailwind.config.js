@@ -13,6 +13,7 @@ module.exports = {
       typography: theme => ({
         DEFAULT: {
           css: {
+            lineHeight: '1.7',
             ul: {
               marginTop: '0px',
               marginBottom: '0px'
