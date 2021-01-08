@@ -4,7 +4,7 @@ export default {
   loadingIndicator: {
     name: 'pulse',
     color: '#1d4ed8',
-    background: '#f9fafb'
+    background: '#fafafa'
   },
   head: {
     title: 'A Brief History of Yesterday',
@@ -45,7 +45,7 @@ export default {
     manifest: {
       name: 'A Brief History of Yesterday',
       short_name: 'Yesterday',
-      background_color: '#f9fafb',
+      background_color: '#fafafa',
       display: 'standalone',
       theme_color: '#1d4ed8'
     }
