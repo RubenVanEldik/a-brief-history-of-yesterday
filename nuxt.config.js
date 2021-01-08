@@ -7,7 +7,7 @@ export default {
     background: '#f9fafb'
   },
   head: {
-    title: 'A Brief History Of Yesterday',
+    title: 'A Brief History of Yesterday',
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -37,13 +37,13 @@ export default {
   },
   pwa: {
     meta: {
-      name: 'A Brief History Of Yesterday',
+      name: 'A Brief History of Yesterday',
       theme_color: '#1d4ed8',
       mobileAppIOS: true,
       appleStatusBarStyle: 'black'
     },
     manifest: {
-      name: 'A Brief History Of Yesterday',
+      name: 'A Brief History of Yesterday',
       short_name: 'Yesterday',
       background_color: '#f9fafb',
       display: 'standalone',
