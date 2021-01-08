@@ -3,7 +3,7 @@
     :is="date ? 'nuxt-link' : 'span'"
     :to="`/${date}`"
     class="px-3"
-    :class="{ 'text-gray-400 dark:text-gray-600': !date }"
+    :class="{ 'text-gray-300 dark:text-gray-700': !date }"
   >
     <svg
       aria-hidden="true"
