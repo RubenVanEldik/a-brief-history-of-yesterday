@@ -1,6 +1,6 @@
 {
   "name": "a-brief-history-of-yesterday",
-  "description": "A no-nonsense overview of yesterday's world events.",
+  "description": "A brief overview of yesterday's world events.",
   "version": "1.0.0",
   "private": false,
   "scripts": {
