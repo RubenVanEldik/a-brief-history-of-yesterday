@@ -24,7 +24,7 @@
           News in the digital age updates constantly. No matter what, there is always some "breaking news". This causes news sites to become more of a slot machine than a substantive source of information.
         </p>
         <p>
-          A Brief History of Yesterday tries to be an antidote. It only shows a summary of what happened yesterday. It updates once a day, so it can't act as a slot machine. It's no news: the content is already slowly becoming history.
+          A Brief History of Yesterday tries to be an antidote. It shows a summary of what happened yesterday. It's no news anymore, the content is already gradually becoming history.
         </p>
       </div>
     </div>
